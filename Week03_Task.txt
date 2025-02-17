@@ -1,0 +1,235 @@
+
+==================================== Q3 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+   int num1, num2;
+
+    printf("Please Enter number a : ");
+    scanf("%d", &num1);
+
+    printf("Please Enter number b : ");
+    scanf("%d", &num2);
+
+    printf("Sum = %d\n", num1 + num2);
+    printf("Difference = %d\n", num1 - num2);
+    printf("Product = %d\n", num1 * num2);
+    printf("Quotient = %d\n", num1 / num2);
+    printf("Modulus = %d\n", num1 % num2);
+
+    return 0;
+}
+
+==================================== Q4 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+   int L, W;
+
+    printf("Please Enter Length : ");
+    scanf("%d", &L);
+
+    printf("Please Enter Width : ");
+    scanf("%d", &W);
+
+    printf("Perimeter of the rectangle is: %d\n", (L + W)*2);
+
+    return 0;
+}
+
+==================================== Q5 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+   int L, W;
+
+    printf("Please Enter Length : ");
+    scanf("%d", &L);
+
+    printf("Please Enter Width : ");
+    scanf("%d", &W);
+
+    printf("Area of the rectangle is: %d\n", L * W);
+
+    return 0;
+}
+
+==================================== Q6 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    float r, d, c, a;
+
+    printf("Please Enter the radius : ");
+    scanf("%f", &r);
+
+    d= 2*r;
+    c= 2*3.14*r;
+    a= 3.14*r*r;
+
+    printf("Diameter of the circle is: %.2f\n", d);
+    printf("circumference of the circle is: %.2f\n", c);
+    printf("Area of the circle is: %.2f\n", a);
+
+    return 0;
+}
+
+==================================== Q7 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    float l;
+
+    printf("Please Enter length in centimeter : ");
+    scanf("%f", &l);
+
+    printf("Length in meter is: %.2f\n", l/100);
+    printf("Length in kilometer is: %.2f\n", l/100000);
+
+    return 0;
+}
+
+==================================== Q8 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    float t;
+
+    printf("Please Enter temperature in Celsius : ");
+    scanf("%f", &t);
+
+    printf("Temperature in Fahrenheit is: %.2fF\n", (t*9/5)+32);
+
+    return 0;
+}
+
+==================================== Q10 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    int d, y, w;
+
+    printf("Enter days: ");
+    scanf("%d", &d);
+
+    y = (d / 365);
+    w = (d % 365) / 7;
+
+    printf("%d", d); // to print it like the codeforwin output
+
+    d  = d - ((y * 365) + (w * 7));
+
+    printf(" days = %d years, %d weeks, %d days\n", y, w, d);
+
+    return 0;
+}
+
+==================================== Q11 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    double base, expo, power;
+
+    printf("Enter base: ");
+    scanf("%lf", &base);
+    printf("Enter exponent: ");
+    scanf("%lf", &expo);
+
+    power = pow(base, expo);
+
+    printf("%.2lf ^ %.2lf = %.2lf", base, expo, power);
+
+    return 0;
+}
+
+==================================== Q12 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    double n;
+
+    printf("Enter number: ");
+    scanf("%lf", &n);
+
+    printf("Square root of %.2lf = %.2lf", n, sqrt(n));
+
+    return 0;
+}
+
+==================================== Q16 ==========================================
+
+#include <stdio.h>
+
+int main ()
+{
+    double a, b, c, d, e,t;
+
+    printf("Enter marks of five subjects: ");
+    scanf("%lf%lf%lf%lf%lf", &a,&b,&c,&d,&e);
+
+    t = a+b+c+d+e;
+
+    printf("Total= %.2lf\n",t);
+    printf("Average= %.2lf\n",t/5);
+    printf("Percentage= %.2lf\n",(t/500)*100);
+
+    return 0;
+}
+
+==================================== HackerRank ==========================================
+==================================== Hello World in C ==========================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+	
+    char s[100];
+    scanf("%[^\n]%*c", &s);
+  	
+    printf("Hello, World!\n");
+    printf("%s",s);
+    return 0;
+}
+
+==================================== Playing with Characters ==========================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    char ch, s[100], sen[100];
+    scanf("%c", &ch);
+    scanf("%s", &s);
+    scanf(" %[^\n]%*c", &sen);
+    
+    printf("%c\n",ch);
+    printf("%s\n",s);
+    printf("%s\n",sen);
+        
+    return 0;
+}
