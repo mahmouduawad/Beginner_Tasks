@@ -1,2 +1,2 @@
-# My_First_Task
-## Hello, I'm Mahmoud Awad and this is my first repository.
+# Tasks
+## Here you can see beginner weeks tasks.
