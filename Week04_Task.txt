@@ -1,0 +1,619 @@
+==================================== If Statements ==========================================
+==================================== Q4 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    if (num % 5 == 0 && num % 11 == 0) {
+        printf("The number is divisible by 5 and 11\n");
+    } else {
+        printf("The number is NOT divisible by 5 and 11\n");
+    }
+
+    return 0;
+}
+
+
+==================================== Q7 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter any character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("The character is an alphabet\n");
+    } else {
+        printf("The character is NOT an alphabet\n");
+    }
+
+    return 0;
+}
+
+==================================== Q8 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter any alphabet: ");
+    scanf("%c", &ch);
+
+    if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ||
+            ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+
+            printf("The alphabet is a Vowel\n");
+    } else {
+            printf("The alphabet is a Consonant\n");
+    }
+   
+    return 0;
+}
+
+
+==================================== Q12 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    int month;
+
+    printf("Enter month number: ");
+    scanf("%d", &month);
+
+        if (month == 1 || month == 3 || month == 5 || month == 7 || 
+            month == 8 || month == 10 || month == 12) {
+            printf("31 days");
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            printf("30 days");
+        } else if (month == 2) {
+            printf("28 days or 29 (leap year)");
+        } else{
+            printf("Invalid input! Please enter month number between (1-12)");
+        }
+
+    return 0;
+}
+
+==================================== Q14 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    int angle1, angle2, angle3, sum;
+
+    printf("Enter three angles of the triangle: ");
+    scanf("%d %d %d", &angle1, &angle2, &angle3);
+
+    sum = angle1 + angle2 + angle3;
+
+    if (sum == 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+        printf("The triangle is valid\n");
+    } else {
+        printf("The triangle is not valid\n");
+    }
+
+    return 0;
+}
+
+==================================== Q16 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    printf("Enter three sides of the triangle: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a == b && b == c) {
+        printf("The triangle is Equilateral\n");
+    }
+    else if (a == b || b == c || a == c) {
+        printf("The triangle is Isosceles\n");
+    }
+    else {
+        printf("The triangle is Scalene\n");
+    }
+
+    return 0;
+}
+
+==================================== Q19 ==========================================
+
+#include <stdio.h>
+
+int main() {
+    float p, c, b, m, comp, total, perc;
+    char grade;
+
+    printf("Enter marks for five subjects: ");
+    scanf("%f %f %f %f %f", &p, &c, &b, &m, &comp);
+
+    total = p + c + b + m + comp;
+    perc = (total / 500) * 100; // Assuming each subject is out of 100
+
+    if (perc >= 90)
+        grade = 'A';
+    else if (perc >= 80)
+        grade = 'B';
+    else if (perc >= 70)
+        grade = 'C';
+    else if (perc >= 60)
+        grade = 'D';
+    else if (perc >= 40)
+        grade = 'E';
+    else
+        grade = 'F';
+
+    printf("\nTotal Marks: %.2f/500", total);
+    printf("\nPercentage: %.2f%%", perc);
+    printf("\nGrade: %c\n", grade);
+
+    return 0;
+}
+
+==================================== Q20 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    float b, gross, da, hra;
+
+    printf("Enter basic salary of an employee: ");
+    scanf("%f", &b);
+
+    if(b <= 10000)
+    {
+        da  = b * 0.8;
+        hra = b * 0.2;
+    }
+    else if(b <= 20000)
+    {
+        da  = b * 0.9;
+        hra = b * 0.25;
+    }
+    else
+    {
+        da  = b * 0.95;
+        hra = b * 0.3;
+    }
+
+    gross = b + hra + da;
+
+    printf("Gross Salary of Employee = %.2f", gross);
+
+    return 0;
+}
+
+
+==================================== Switch Case ==========================================
+==================================== Q1 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int week;
+
+    printf("Enter week number: ");
+    scanf("%d", &week);
+    
+    switch(week)
+    {
+        case 1: 
+            printf("Monday");
+            break;
+        case 2: 
+            printf("Tuesday");
+            break;
+        case 3: 
+            printf("Wednesday");
+            break;
+        case 4: 
+            printf("Thursday");
+            break;
+        case 5: 
+            printf("Friday");
+            break;
+        case 6: 
+            printf("Saturday");
+            break;
+        case 7: 
+            printf("Sunday");
+            break;
+        default: 
+            printf("Invalid input! Please enter week number between (1-7)");
+    }
+
+    return 0;
+}
+==================================== Q7 ==========================================
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float a, b, c;
+    float root1, root2, imaginary;
+    float discriminant;
+
+    printf("Enter values of a, b, c of quadratic equation (aX^2 + bX + c): ");
+    scanf("%f%f%f", &a, &b, &c);
+
+    discriminant = (b * b) - (4 * a * c);
+
+    switch(discriminant > 0)
+    {
+        case 1:
+            root1 = (-b + sqrt(discriminant)) / (2 * a);
+            root2 = (-b - sqrt(discriminant)) / (2 * a);
+
+            printf("Root1: %.2f\nRoot2: %.2f", root1, root2);
+            break;
+
+        case 0:
+            switch(discriminant < 0)
+            {
+                case 1:
+                    root1 = root2 = -b / (2 * a);
+                    imaginary = sqrt(-discriminant) / (2 * a);
+
+                    printf("Root1: %.2f + i%.2f \nRoot2: %.2f - i%.2f", root1, imaginary, root2, imaginary);
+                    break;
+
+                case 0:
+                    root1 = root2 = -b / (2 * a);
+
+                    printf("Two equal and real roots exists: %.2f and %.2f", root1, root2);
+
+                    break;
+            }
+    }
+
+    return 0;
+}
+
+
+==================================== Q8 ==========================================
+
+
+#include <stdio.h>
+
+int main()
+{
+    char op;
+    float num1, num2, result=0;
+
+    printf("Enter two numbers\n");
+    scanf("%f%f", &num1, &num2);
+
+    printf("Enter the operation\n");
+    scanf("%c", &op);
+
+    switch(op)
+    {
+        case '+': 
+            result = num1 + num2;
+            break;
+
+        case '-': 
+            result = num1 - num2;
+            break;
+
+        case '*': 
+            result = num1 * num2;
+            break;
+
+        case '/': 
+            result = num1 / num2;
+            break;
+
+        default: 
+            printf("Invalid operator");
+    }
+
+    printf("%.2f %c %.2f = %.2f", num1, op, num2, result);
+
+    return 0;
+}
+
+
+==================================== Loop Statements ==========================================
+==================================== Q2 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int start;
+
+    printf("Enter starting value: ");
+    scanf("%d", &start);
+ 
+    for(int i=start; i>=1; i--)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+==================================== Q5 ==========================================
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+
+    printf("Enter the number: ");
+    scanf("%d", &n);
+
+    printf("Even numbers from 1 to %d are: \n", n);
+
+    for(int i=1; i<=n; i++)
+    {
+        if(i%2 == 0)
+        {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
+
+==================================== Q6 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int n, sum=0;
+
+    printf("Enter the number: ");
+    scanf("%d", &n);
+
+    for(int i=1; i<=n; i++)
+    {
+        sum += i;
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+
+==================================== Q9 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    for(int i=1; i<=10; i++)
+    {
+        printf("%d * %d = %d\n", num, i, (num*i));
+    }
+
+    return 0;
+}
+
+==================================== Q10 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    long long num;
+    int count = 0;
+
+    printf("Enter the number: ");
+    scanf("%lld", &num);
+
+    do
+    {
+        count++;
+        num /= 10;
+    } while(num != 0);
+
+    printf("Total digits: %d", count);
+
+    return 0;
+}
+
+==================================== Q15 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    long long product=1;
+
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    if (num == 0){
+       product = 0;
+    }else{
+       product = 1;
+    }
+
+    while(num != 0)
+    {
+        product = product * (num % 10);
+        num = num / 10;
+    }
+
+    printf("Product of digits = %lld", product);
+
+    return 0;
+}
+
+==================================== Q16 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int num, reverse = 0;
+
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    while(num != 0)
+    {
+        reverse = (reverse * 10) + (num % 10);
+        num /= 10;
+    }
+
+    printf("Reverse = %d", reverse);
+
+    return 0;
+}
+
+==================================== Q21 ==========================================
+
+#include <stdio.h>
+
+int main()
+{
+    int base, exponent;
+    long long power = 1;
+
+    printf("Enter base: ");
+    scanf("%d", &base);
+
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+
+    for(int i=1; i<=exponent; i++)
+    {
+        power = power * base;
+    }
+
+    printf("%d ^ %d = %lld", base, exponent, power);
+
+    return 0;
+}
+
+==================================== Q40 ==========================================
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    long long binary, decimal=0;
+    int base = 2, N=0;
+
+    printf("Enter the binary number: ");
+    scanf("%lld", &binary);
+
+    while(binary!=0)
+    {
+        if(binary % 10 == 1)
+        {
+            decimal += pow(base, N);
+        }
+        N++;
+        binary /= 10;
+    }
+
+    printf("Decimal number= %lld", decimal);
+
+    return 0;
+}
+
+==================================== HackerRank ==========================================
+==================================== Conditional Statements in C ==========================================
+
+#include <stdio.h>
+
+int main() {
+
+    int n;
+  
+    scanf("%d", &n);
+
+    if (n == 1) 
+        printf("one\n");
+    else if (n == 2) 
+        printf("two\n");
+    else if (n == 3) 
+        printf("three\n");
+    else if (n == 4) 
+        printf("four\n");
+    else if (n == 5) 
+        printf("five\n");
+    else if (n == 6) 
+        printf("six\n");
+    else if (n == 7) 
+        printf("seven\n");
+    else if (n == 8) 
+        printf("eight\n");
+    else if (n == 9) 
+        printf("nine\n");
+    else 
+        printf("Greater than 9\n");
+
+    return 0;
+}
+
+==================================== For Loop in C ==========================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() 
+{
+    int a, b;
+    scanf("%d\n%d", &a, &b);
+  	
+    for (int n = a; n <= b; n++) {
+        if (n == 1) 
+            printf("one\n");
+        else if (n == 2) 
+            printf("two\n");
+        else if (n == 3) 
+            printf("three\n");
+        else if (n == 4) 
+            printf("four\n");
+        else if (n == 5) 
+            printf("five\n");
+        else if (n == 6) 
+            printf("six\n");
+        else if (n == 7) 
+            printf("seven\n");
+        else if (n == 8) 
+            printf("eight\n");
+        else if (n == 9) 
+            printf("nine\n");
+        else 
+            printf("%s\n", (n % 2 == 0) ? "even" : "odd"); // Check even/odd
+    }
+
+    return 0;
+}
