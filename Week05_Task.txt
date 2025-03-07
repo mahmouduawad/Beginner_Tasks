@@ -1,0 +1,324 @@
+==================================== Function ==========================================
+==================================== Q1 ==========================================
+
+#include <stdio.h>
+
+double cube(double num)
+{
+    return (num * num * num);
+}
+
+int main()
+{
+    int num;
+    
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    printf("Cube of %d is %.2f", num, cube(num)); 
+    
+    return 0;
+}
+
+==================================== Q2 ==========================================
+
+#include <stdio.h>
+
+double getDiameter(double radius){
+    return (2 * radius);
+}
+
+double getCircumference(double radius){
+    return (2 * 3.14 * radius);
+}
+
+double getArea(double radius){
+    return (3.14 * radius * radius);
+}
+
+int main()
+{
+    float r;
+
+    printf("Enter the radius: ");
+    scanf("%f", &r);
+
+    printf("Diameter = %.2f units\n", getDiameter(r));
+    printf("Circumference = %.2f units\n", getCircumference(r));
+    printf("Area = %.2f sq. units", getArea(r));
+
+    return 0;
+}
+
+==================================== Q3 ==========================================
+
+#include <stdio.h>
+
+int max(int num1, int num2)
+{
+    return (num1 > num2) ? num1 : num2;
+}
+
+int min(int num1, int num2)
+{
+    return (num1 > num2) ? num2 : num1;
+}
+
+int main()
+{
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &num1, &num2);
+
+    printf("Maximum = %d\n", max(num1, num2));
+    printf("Minimum = %d", min(num1, num2));
+
+    return 0;
+}
+
+==================================== Q6 ==========================================
+
+#include <stdio.h>
+
+void printPrimes(int lowerLimit, int upperLimit)
+{
+    printf("Prime numbers between %d to %d are: ", lowerLimit, upperLimit);
+
+    while (lowerLimit <= upperLimit)
+    {
+        if (isPrime(lowerLimit))
+        {
+            printf("%d, ", lowerLimit);
+        }
+        lowerLimit++;
+    }
+}
+
+int isPrime(int num)
+{
+    int i;
+
+    for (i = 2; i <= num/2; i++)
+    {
+        if (num % i == 0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+int main()
+{
+    int lowerLimit, upperLimit;
+
+    printf("Enter the lower and upper limit: ");
+    scanf("%d%d", &lowerLimit, &upperLimit);
+
+    printPrimes(lowerLimit, upperLimit);
+
+    return 0;
+}
+
+==================================== Q8 ==========================================
+
+#include <stdio.h>
+
+int isArmstrong(int num)
+{
+    int temp = num, lastDigit, sum=0;
+
+    while (temp != 0)
+    {
+        lastDigit = temp % 10;
+        sum += lastDigit * lastDigit * lastDigit;
+        temp /= 10;
+    }
+
+    if (num == sum)
+        return 1;
+    else
+        return 0;
+}
+
+void printArmstrong(int start, int end)
+{
+    while (start <= end)
+    {
+        if (isArmstrong(start))
+        {
+            printf("%d, ", start);
+        }
+        start++;
+    }
+}
+
+int main()
+{
+    int start, end;
+
+    printf("Enter lower limit: ");
+    scanf("%d", &start);
+    printf("Enter upper limit: ");
+    scanf("%d", &end);
+
+    printf("All armstrong numbers between %d to %d are: \n", start, end);
+    printArmstrong(start, end);
+
+    return 0;
+}
+
+
+==================================== Recursion ==========================================
+==================================== Q12 ==========================================
+
+#include <stdio.h>
+
+void printEvenOdd(int cur, int limit)
+{
+    if (cur > limit)
+        return;
+
+    printf("%d, ", cur);
+
+    printEvenOdd(cur + 2, limit);
+}
+
+int main()
+{
+    int lowerLimit, upperLimit;
+
+    printf("Enter lower limit: ");
+    scanf("%d", &lowerLimit);
+    printf("Enter upper limit: ");
+    scanf("%d", &upperLimit);
+
+    printf("Even/odd Numbers from %d to %d are: ", lowerLimit, upperLimit);
+    printEvenOdd(lowerLimit, upperLimit);
+
+    return 0;
+}
+
+==================================== Q16 ==========================================
+
+
+==================================== Q17 ==========================================
+
+#include <stdio.h>
+
+int Sum(int num)
+{
+    if(num == 0)
+        return 0;
+    return ((num % 10) + Sum(num / 10));
+}
+
+int main()
+{
+    int n;
+    
+    printf("Enter the number: ");
+    scanf("%d", &n);
+    
+    printf("Sum of digits = %d", Sum(n));
+
+    return 0;
+}
+
+
+==================================== Q18 ==========================================
+
+#include <stdio.h>
+
+long long fact(int num)
+{
+    if (num == 0)
+        return 1;
+    else
+        return num * fact(num - 1);
+}
+
+int main()
+{
+    int n;
+
+    printf("Enter the number: ");
+    scanf("%d", &n);
+
+    printf("Factorial of %d is %llu", n, fact(n));
+
+    return 0;
+}
+
+
+==================================== HackerRank ==========================================
+==================================== Recursion in C ==========================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+
+int find_nth_term(int n, int a, int b, int c) {
+ 
+    if (n == a) return 1;
+    if (n == b) return 2;
+    if (n == c) return 3;
+    
+    return find_nth_term(n-a, a, b, c) + find_nth_term(n-b, a, b, c) + find_nth_term(n-c, a, b, c);   
+}
+    
+
+int main() {
+    int n, a, b, c;
+  
+    scanf("%d %d %d %d", &n, &a, &b, &c);
+    int ans = find_nth_term(n, a, b, c);
+ 
+    printf("%d", ans); 
+    return 0;
+}
+
+==================================== Students Marks Sum ==========================================
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+//Complete the following function.
+
+int marks_summation(int* marks, int number_of_students, char gender) {
+    int sum = 0;
+    int *p = marks;
+    
+    int startIndex = (gender == 'b') ? 0 : 1;
+
+    for (int i = startIndex; i < number_of_students; i += 2) {
+      sum += *(p + i);
+    }
+    return sum;
+}
+
+int main() {
+    int number_of_students;
+    char gender;
+    int sum;
+  
+    scanf("%d", &number_of_students);
+    int *marks = (int *) malloc(number_of_students * sizeof (int));
+ 
+    for (int student = 0; student < number_of_students; student++) {
+        scanf("%d", (marks + student));
+    }
+    
+    scanf(" %c", &gender);
+    sum = marks_summation(marks, number_of_students, gender);
+    printf("%d", sum);
+    free(marks);
+ 
+    return 0;
+}
