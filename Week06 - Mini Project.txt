@@ -1,0 +1,73 @@
+==================================== Online Order System ==========================================
+
+#include <stdio.h>
+
+int main() {
+    char item_name[50], customer_name[50],phone_number[11];
+    float price, subtotal = 0, total_shipping = 0, discount = 0, total;
+    int count = 0, overnight;
+    char choice;
+
+    printf("Welcome to the Online Order System!\n");
+
+    printf("Enter your first name: ");
+    scanf(" %[^\n]", customer_name);
+    printf("Enter your phone number: ");
+    scanf(" %s", phone_number);
+
+    do {
+        printf("\nEnter item name: ");
+        scanf(" %[^\n]", item_name);
+        
+        printf("Enter item price: ");
+        scanf("%f", &price);
+
+        printf("Overnight shipping? (1 for Yes, 0 for No): ");
+        scanf("%d", &overnight);
+
+        // Shipping cost
+        float shipping = (price < 10) ? 2 : 3;
+        if (overnight) {
+            shipping += 5;
+        }
+
+        subtotal += price;
+        total_shipping += shipping;
+        count++;    // Number of items
+        
+        if (count < 2) {
+            printf("You need to add at least one more item.\n");
+        }
+
+        printf("Would you like to add another item? (y/n): ");
+        scanf(" %c", &choice);
+
+    } while (choice == 'y' || choice == 'Y');
+
+    if (count < 2) {
+        printf("Order canceled. Minimum 2 items required.\n");
+        return 0;
+    }
+
+    // The Discount
+    if (count > 5) {
+        discount = subtotal * 0.2;
+    }
+
+    // Total Price
+    total = subtotal + total_shipping - discount;
+
+    // The Receipt
+    printf("\n--- Order Receipt ---\n");
+    printf("Customer Name: %s\n", customer_name);
+    printf("Phone Number: %s\n", phone_number);
+    printf("\n---------------------\n");
+    printf("Total Items: %d\n", count);
+    printf("Subtotal: $%.2f\n", subtotal);
+    printf("Shipping: $%.2f\n", total_shipping);
+    printf("Discount: $%.2f\n", discount);
+    printf("Total: $%.2f\n", total);
+    printf("--- Thank you for your order! ---\n");
+
+    return 0;
+}
